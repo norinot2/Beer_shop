@@ -1,0 +1,29 @@
+@mixin headline-1 {
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 800;
+}
+
+@mixin headline-2 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 800;
+}
+
+@mixin headline-3 {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+}
+
+@mixin headline-4 {
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 700;
+}
+
+@mixin headline-5 {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 800;
+}

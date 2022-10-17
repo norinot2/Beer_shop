@@ -1,0 +1,44 @@
+@import "../app/Styling/text_component.scss";
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 4px;
+
+  position: absolute;
+  width: 1445px;
+  height: 24px;
+  left: 80px;
+  top: 253px;
+
+  align-items: center;
+  margin: auto;
+  left: 81px;
+  right: 0;
+}
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @include caption;
+}
+img {
+  margin-top: 8px;
+}
+.active {
+  @include caption-bold;
+}
+.active-content {
+  position: absolute;
+  width: 1445px;
+  height: 36px;
+  left: 80px;
+  right: 0;
+
+  margin: auto;
+  top: 329px;
+}

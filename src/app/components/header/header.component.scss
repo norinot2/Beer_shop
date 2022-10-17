@@ -1,0 +1,154 @@
+@import "../../Styling/text_component.scss";
+@import "../../Styling/colors_component.scss";
+
+.header {
+  display: flex;
+
+  right: 0;
+  margin: auto;
+  position: absolute;
+  width: 1445px;
+  height: 198px;
+  left: -14px;
+  top: 0px;
+  background: map-get($colors, "white");
+}
+.header_first_row {
+  position: absolute;
+  width: inherit;
+  height: 48px;
+}
+
+.header_second_row {
+  position: absolute;
+  width: inherit;
+  height: 80px;
+
+  top: 34.34%;
+}
+.menu-items {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 24px;
+
+  position: absolute;
+  width: 366.64px;
+  height: 45px;
+  left: calc(50% - 366.64px / 2 + 455.82px);
+  top: 43.18%;
+  bottom: 34.09%;
+}
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+app-searchbar {
+  position: absolute;
+  left: 28.24%;
+  right: 35.77%;
+  top: 45.45%;
+  bottom: 34.34%;
+
+  border-radius: 4px;
+}
+
+.menu-items li {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @include caption-small;
+}
+
+.menu-img {
+  filter: invert(42%) sepia(46%) saturate(730%) hue-rotate(139deg)
+    brightness(104%) contrast(97%);
+}
+
+.header__logo {
+  position: absolute;
+  left: 6.3%;
+  right: 84.14%;
+  top: 37.88%;
+  bottom: 13.64%;
+
+  z-index: 1000;
+}
+
+.header_first_row_contact {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 2px;
+  gap: 4px;
+
+  position: absolute;
+  left: 5.69%;
+  margin-top: 14px;
+}
+
+.header_first_row_contact li {
+  @include caption;
+}
+
+img {
+  cursor: pointer;
+}
+
+.header_second_row_language {
+  display: flex;
+  flex-direction: row;
+  padding: 2px;
+  gap: 4px;
+
+  right: 91.6px;
+  position: absolute;
+  margin-top: 18px;
+  align-items: center;
+}
+.bottom_navigator {
+  position: absolute;
+  left: 0.07%;
+  right: 0.28%;
+  top: 77.78%;
+  bottom: 0%;
+
+  /* Greyscale/White */
+
+  background: map-get($colors, "white");
+
+  box-shadow: 0px 1px 2px rgba(5, 7, 32, 0.08);
+}
+.navigator_ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-right: 21%;
+  gap: 24px;
+}
+
+.navigator_ul li {
+  box-sizing: border-box;
+
+  /* Auto layout */
+
+  margin-top: 6px;
+
+  padding: 8px;
+  gap: 10px;
+  width: auto;
+  height: 40px;
+
+  border-bottom: 2px solid map-get($colors, "turquoise");
+
+  @include caption-uppercase-bold;
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}

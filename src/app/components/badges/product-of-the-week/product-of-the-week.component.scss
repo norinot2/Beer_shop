@@ -1,0 +1,38 @@
+div {
+  box-sizing: border-box;
+
+  /* Auto layout */
+
+  display: flex;
+  padding: 1px 10px;
+  gap: 10px;
+
+  width: 131px;
+  height: 25px;
+  left: 20px;
+  top: 155px;
+
+  /* Greyscale/White */
+
+  background: #ffffff;
+  /* Greyscale/Black */
+
+  border: 1px solid #000000;
+  border-radius: 4px;
+}
+p {
+  width: 109px;
+  height: 20px;
+
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 20px;
+
+  color: #000000;
+  margin: auto;
+  left: 0;
+  right: 0;
+
+}

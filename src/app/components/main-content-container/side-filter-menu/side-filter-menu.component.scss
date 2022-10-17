@@ -1,0 +1,16 @@
+.filter-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 10px;
+
+  position: absolute;
+  width: 302px;
+  height: 750px;
+  left: 0px;
+  top: 0px;
+
+
+  background-color: beige;
+}
