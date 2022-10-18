@@ -1,7 +1,7 @@
 <div class="beer-container">
   <div class="beer-flex">
-    <ng-container *ngFor="let beer of Beers">
-      <app-beer-card [image_url]="beer.image_url" [name]="beer.name" [tagline]="beer.tagline"></app-beer-card>
+    <ng-container *ngFor="let beer of beerService.Beers">
+      <app-beer-card [image_url]="beer.image_url" [name]="beer.name" [tagline]="beer.tagline" [contributor]="beer.contributed_by"></app-beer-card>
     </ng-container>
   </div>
 </div>

@@ -1,3 +1,50 @@
 <div class="filter-container">
+  <span class="filter-title"
+    ><img
+      src="../../../../assets/icons/24x24/filter.svg"
+      alt=""
+    />FilterBy</span
+  >
 
+  <span
+    >Beer Styles<img src="../../../../assets/icons/24x24/arow up.svg" alt=""
+  /></span>
+  <ul>
+    <li><input type="checkbox" /> <label for="">IPA</label></li>
+    <li><input type="checkbox" /> <label for="">PORTER & STAUT</label></li>
+    <li><input type="checkbox" /> <label for="">LAGER & HELLES</label></li>
+    <li><input type="checkbox" /> <label for="">SOUR ALE & WILD ALE</label></li>
+    <li><input type="checkbox" /> <label for="">PALE ALE</label></li>
+  </ul>
+
+  <span
+    >Method <img src="../../../../assets/icons/24x24/arow up.svg" alt=""
+  /></span>
+  <form [formGroup]="methodForm">
+    <ul>
+      <li><input type="checkbox" (change)="onSubmit()" formControlName="mash_temp" /> <label for=""> MASH TEMP</label></li>
+      <li><input type="checkbox" (change)="onSubmit()" formControlName="fermentation"  /><label for="">FERMENTATION</label></li>
+      <li><input type="checkbox" (change)="onSubmit()" formControlName="twist"  /><label for="">TWIST</label></li>
+    </ul>
+  </form>
+
+  <span
+    >Special Products
+    <img src="../../../../assets/icons/24x24/arow up.svg" alt=""
+  /></span>
+  <ul>
+    <li><input type="checkbox" /><label for=""> OFFERS</label></li>
+  </ul>
+
+  <span
+    >Alcohol range <img src="../../../../assets/icons/24x24/arow up.svg" alt=""
+  /></span>
+  <div class="bottom-button-group">
+    <input type="text" placeholder="from (%)" />
+    <input type="text" placeholder="until (%)" />
+    <button>Apply</button>
+  </div>
+  <div class="reset-group">
+    <button class="reset-to-default">Reset to default</button>
+  </div>
 </div>

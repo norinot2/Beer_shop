@@ -90,6 +90,14 @@ p {
   background-size: 35px !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
+
+  transition: 0.5s all ease-in-out;
+  caret-color: transparent;
+}
+.image-container:hover{
+  transform: scale(1.2);
+  z-index: 1;
+
 }
 .header {
   display: flex;

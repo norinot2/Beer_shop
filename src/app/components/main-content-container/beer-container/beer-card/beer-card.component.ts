@@ -9,9 +9,10 @@ import { Beer } from 'src/app/interfaces/beer';
 export class BeerCardComponent implements OnInit {
 
 
-  @Input() name!: string;
-  @Input() image_url!: string;
-  @Input() tagline!: string;
+  @Input() name?: string;
+  @Input() image_url?: string;
+  @Input() tagline?: string;
+  @Input() contributor?: string;
 
   constructor() { }
 

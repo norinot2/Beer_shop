@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Beer } from 'src/app/interfaces/beer';
+import { BeerService } from 'src/app/services/beer.service';
+import { HttpService } from 'src/app/services/http.service';
 
 @Component({
   selector: 'app-beer-container',
@@ -9,17 +11,15 @@ import { Beer } from 'src/app/interfaces/beer';
 })
 export class BeerContainerComponent implements OnInit {
 
+  constructor(public http: HttpService, public beerService: BeerService) {
+    this.http.getBeers().subscribe((data) => {
+      this.beerService.Beers = data as Beer[];
+      console.log(this.beerService.Beers);
 
-  Beers: Beer[] = [];
-
-  constructor(public http: HttpClient) {
-    this.http.get('https://api.punkapi.com/v2/beers').subscribe((data) => {
-      this.Beers = data as Beer[];
     })
   }
 
   ngOnInit(): void {
-    console.log(this.Beers[1].image_url);
 
   }
 

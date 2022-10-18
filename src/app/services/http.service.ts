@@ -16,7 +16,7 @@ export class HttpService {
 
 
   getBeers() {
-    return this.http.get<Beer[]>(this.BASE_URL);
+    return this.http.get<Beer[]>('https://api.punkapi.com/v2/beers?page=1&per_page=80');
   }
 
 }
