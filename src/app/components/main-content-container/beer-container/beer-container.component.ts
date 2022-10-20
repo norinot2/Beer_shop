@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Beer } from 'src/app/interfaces/beer';
 import { BeerService } from 'src/app/services/beer.service';
 import { HttpService } from 'src/app/services/http.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-beer-container',
@@ -11,10 +12,9 @@ import { HttpService } from 'src/app/services/http.service';
 })
 export class BeerContainerComponent implements OnInit {
 
-  constructor(public http: HttpService, public beerService: BeerService) {
+  constructor(public http: HttpService, public beerService: BeerService, private Router: Router) {
     this.http.getBeers().subscribe((data) => {
       this.beerService.Beers = data as Beer[];
-      console.log(this.beerService.Beers);
 
     })
   }

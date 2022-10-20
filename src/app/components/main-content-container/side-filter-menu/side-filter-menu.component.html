@@ -9,22 +9,57 @@
   <span
     >Beer Styles<img src="../../../../assets/icons/24x24/arow up.svg" alt=""
   /></span>
-  <ul>
-    <li><input type="checkbox" /> <label for="">IPA</label></li>
-    <li><input type="checkbox" /> <label for="">PORTER & STAUT</label></li>
-    <li><input type="checkbox" /> <label for="">LAGER & HELLES</label></li>
-    <li><input type="checkbox" /> <label for="">SOUR ALE & WILD ALE</label></li>
-    <li><input type="checkbox" /> <label for="">PALE ALE</label></li>
-  </ul>
-
+  <form [formGroup]="beerStyle">
+    <ul>
+      <li>
+        <input formControlName="ipa" type="checkbox" />
+        <label for="">IPA</label>
+      </li>
+      <li>
+        <input formControlName="stout" type="checkbox" />
+        <label for="">PORTER & STAUT</label>
+      </li>
+      <li>
+        <input formControlName="lager" type="checkbox" />
+        <label for="">LAGER & HELLES</label>
+      </li>
+      <li>
+        <input formControlName="sour" type="checkbox" />
+        <label for="">SOUR ALE & WILD ALE</label>
+      </li>
+      <li>
+        <input formControlName="pale" type="checkbox" />
+        <label for="">PALE ALE</label>
+      </li>
+    </ul>
+  </form>
   <span
     >Method <img src="../../../../assets/icons/24x24/arow up.svg" alt=""
   /></span>
   <form [formGroup]="methodForm">
     <ul>
-      <li><input type="checkbox" (change)="onSubmit()" formControlName="mash_temp" /> <label for=""> MASH TEMP</label></li>
-      <li><input type="checkbox" (change)="onSubmit()" formControlName="fermentation"  /><label for="">FERMENTATION</label></li>
-      <li><input type="checkbox" (change)="onSubmit()" formControlName="twist"  /><label for="">TWIST</label></li>
+      <li>
+        <input
+          type="checkbox"
+          (change)="onSubmit()"
+          formControlName="mash_temp"
+        />
+        <label for=""> MASH TEMP</label>
+      </li>
+      <li>
+        <input
+          type="checkbox"
+          (change)="onSubmit()"
+          formControlName="fermentation"
+        /><label for="">FERMENTATION</label>
+      </li>
+      <li>
+        <input
+          type="checkbox"
+          (change)="onSubmit()"
+          formControlName="twist"
+        /><label for="">TWIST</label>
+      </li>
     </ul>
   </form>
 
@@ -32,19 +67,24 @@
     >Special Products
     <img src="../../../../assets/icons/24x24/arow up.svg" alt=""
   /></span>
-  <ul>
-    <li><input type="checkbox" /><label for=""> OFFERS</label></li>
-  </ul>
-
+  <form [formGroup]="specialForm">
+    <ul>
+      <li><input formControlName="special" type="checkbox" /><label for=""> OFFERS</label></li>
+    </ul>
+  </form>
   <span
     >Alcohol range <img src="../../../../assets/icons/24x24/arow up.svg" alt=""
   /></span>
-  <div class="bottom-button-group">
-    <input type="text" placeholder="from (%)" />
-    <input type="text" placeholder="until (%)" />
-    <button>Apply</button>
-  </div>
+  <form [formGroup]="abvForm" (ngSubmit)="onSubmitAbv()">
+    <div class="bottom-button-group">
+      <input type="text" formControlName="from" placeholder="from (%)" />
+      <input type="text" formControlName="to" placeholder="until (%)" />
+      <button type="submit">Apply</button>
+    </div>
+  </form>
   <div class="reset-group">
-    <button class="reset-to-default">Reset to default</button>
+    <button class="reset-to-default" (click)="resetForms()">
+      Reset to default
+    </button>
   </div>
 </div>

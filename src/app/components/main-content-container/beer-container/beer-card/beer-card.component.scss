@@ -44,6 +44,8 @@ p {
   order: 0;
   align-self: stretch;
   flex-grow: 0;
+
+  cursor: pointer;
 }
 
 .bottom-contents {
@@ -194,4 +196,7 @@ small {
 }
 .icon-container-topside{
   margin-left: 15px;
+}
+button{
+  cursor: pointer;
 }

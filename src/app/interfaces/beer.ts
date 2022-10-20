@@ -1,3 +1,4 @@
+import { Ingredient } from "./ingredients";
 import { Method } from "./method";
 
 export interface Beer {
@@ -16,6 +17,7 @@ export interface Beer {
   ph: number;
   attenuation_level: number;
   method: Method;
+  ingredients: Ingredient;
   food_pairing: string[];
   brewers_tips: string;
   contributed_by: string;

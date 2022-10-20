@@ -8,5 +8,8 @@ export class BeerService {
 
   Beers: Beer[] = [];
 
+  inCart: Beer[] = [];
+
+  selectedBeer?: Beer;
   constructor() { }
 }

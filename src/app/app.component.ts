@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { BeerService } from './services/beer.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,8 @@ import { Component, HostListener } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-
+  constructor(public beerService: BeerService) {}
+  clearSelectedBeer(){
+    this.beerService.selectedBeer = undefined;
+  }
 }

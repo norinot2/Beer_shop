@@ -15,6 +15,7 @@ import { NewComponent } from './components/badges/new/new.component';
 import { ProductOfTheWeekComponent } from './components/badges/product-of-the-week/product-of-the-week.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { BeerDetailsComponent } from './components/beer-details/beer-details.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { HttpClientModule } from '@angular/common/http';
     SaleComponent,
     SoldOutComponent,
     NewComponent,
-    ProductOfTheWeekComponent
+    ProductOfTheWeekComponent,
+    BeerDetailsComponent
   ],
   imports: [
     BrowserModule,

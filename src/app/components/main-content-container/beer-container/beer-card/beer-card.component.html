@@ -1,5 +1,5 @@
 <div class="card">
-  <div class="top-contents">
+  <div (click)="selectedBeer(beer!)" class="top-contents">
     <div class="header">
       <div class="badge-container">
         <app-new></app-new>
@@ -10,26 +10,33 @@
         <img src="../../../../../assets/icons/24x24/heart.svg" alt="" />
       </div>
     </div>
-    <div class="image-container" style="background: url({{image_url}});"></div>
+    <div
+      class="image-container"
+      style="background: url({{image_url}})"
+    ></div>
     <div class="description">
-      <small>{{contributor}}</small>
-      <h5>{{name}}</h5>
-      <small>{{tagline}}</small>
+      <small>{{ contributor }}</small>
+      <h5>{{ name }}</h5>
+      <small>{{ tagline }}</small>
     </div>
   </div>
   <div class="bottom-contents">
     <!-- Bottom price, amount of liquid and add to cart button -->
     <div class="price-content">
-      <h2>€7.00 <small>€14,90</small></h2>
+      <h2>
+        €{{ beerPrice }}
+        <small>€{{ beerPrice! - beerPrice! / 1.5 | number: "1.2-2" }}</small>
+      </h2>
       <p>Content <small>0.44 Liter</small></p>
     </div>
-
-    <div class="button-container">
-      <input type="text" placeholder="1" />
-      <button>
-        <img src="../../../../../assets/icons/24x24/cart.svg" alt="" />Add to
-        cart
-      </button>
-    </div>
+    <form [formGroup]="cartForm">
+      <div class="button-container">
+        <input formControlName="quantity" type="text" placeholder="1" />
+        <button (click)="putToCart(beer!)">
+          <img src="../../../../../assets/icons/24x24/cart.svg" alt="" />Add to
+          cart
+        </button>
+      </div>
+    </form>
   </div>
 </div>

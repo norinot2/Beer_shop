@@ -1,0 +1,263 @@
+@import "../../Styling/text_component.scss";
+@import "../../Styling/colors_component.scss";
+
+.details-container {
+  position: absolute;
+  width: 1445px;
+  height: 918px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 329px;
+}
+.image-container {
+  width: 411px;
+  height: 317px;
+  left: 80px;
+  top: 330px;
+
+  background-color: #f2f2f2;
+}
+.beer-description {
+  margin-top: 16px;
+}
+h2,
+h4 {
+  margin: 0;
+}
+h4 {
+  margin-bottom: 8px;
+}
+.beer-tagline {
+  @include standard-text;
+  color: map-get($colors, "dark-grey");
+}
+.beer-description {
+  @include standard-text;
+}
+.price-shipping-container {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 27px;
+
+  span {
+    @include caption;
+    color: map-get($colors, "dark-grey");
+    a {
+      @include caption;
+      text-decoration: underline;
+      color: map-get($colors, "turqouise-dark");
+    }
+  }
+}
+.short-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+
+  width: 520px;
+  height: 241px;
+  left: 514px;
+  top: 329px;
+
+  h1 {
+    margin: 0;
+    display: flex;
+    width: inherit;
+    justify-content: space-between;
+  }
+
+  span {
+    @include standard-text;
+  }
+}
+.beer-short-w-image {
+  width: 1280px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  gap: 23px;
+  display: flex;
+  flex-direction: row;
+}
+.big-beer-image {
+  width: 411px;
+  height: 317px;
+  position: absolute;
+
+  object-fit: contain;
+  scale: 0.6;
+}
+.icon-group {
+  position: relative;
+  width: inherit;
+  float: right;
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+
+  margin: 16px 16.82px 0 0;
+  gap: 5px;
+  justify-content: flex-end;
+}
+.cart-button-w-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+
+  width: 302px;
+  height: 311px;
+  left: 1058px;
+  top: 330px;
+
+  background: #faf9fb;
+}
+
+.delivery_div {
+  padding: 15px 15px 0 15px;
+  display: flex;
+  flex-direction: column;
+}
+form {
+  padding: 0 15px 15px 15px;
+  div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+.formInput {
+  text-align: center;
+}
+.remove-button {
+  box-sizing: border-box;
+  background-color: white;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  gap: 4px;
+
+  width: 40px;
+  height: 40px;
+
+  border: 1px solid #7b7e82;
+  border-right: none;
+  border-radius: 5px 0 0 5px;
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.add-button {
+  box-sizing: border-box;
+  background-color: white;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  gap: 4px;
+
+  width: 40px;
+  height: 40px;
+
+  border: 1px solid #7b7e82;
+  border-left: none;
+  border-radius: 0px 5px 5px 0px;
+
+  flex: none;
+  order: 3;
+  flex-grow: 0;
+}
+.add-to-cart-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  width: 256px;
+  height: 40px;
+  color: white;
+  /* Primary/Turquoise */
+
+  background: #5ab0bb;
+  border-radius: 4px;
+  border: none;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 1;
+
+  img {
+    filter: invert(100%) sepia(10%) saturate(7423%) hue-rotate(206deg)
+      brightness(123%) contrast(100%);
+  }
+}
+.add-to-cart-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.beer-detailed-description {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 32px;
+
+  margin-left: 82.5px;
+  margin-top: 64px;
+
+  width: 628px;
+  height: 536px;
+  left: 80px;
+  top: 784px;
+  .detailed-list {
+    list-style: none;
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 32px;
+
+    width: 628px;
+    height: 472px;
+
+    li {
+      span {
+        width: 100px;
+        height: 24px;
+        @include text-bold;
+
+        color: map-get($colors, "dark-grey" );
+      }
+      @include standard-text;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      padding: 0px 0px 35px;
+      gap: 40px;
+
+      width: 628px;
+
+      border-bottom: 1px solid #cfcfcf;
+
+      flex: none;
+      order: 0;
+      flex-grow: 0;
+    }
+  }
+}

@@ -144,11 +144,15 @@ img {
   width: auto;
   height: 40px;
 
-  border-bottom: 2px solid map-get($colors, "turquoise");
+  // border-bottom: 2px solid map-get($colors, "turquoise");
 
   @include caption-uppercase-bold;
 
   flex: none;
   order: 0;
   flex-grow: 0;
+}
+.activeTab{
+  border-bottom: 2px solid map-get($colors, "turquoise");
+
 }

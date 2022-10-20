@@ -3,10 +3,9 @@
 <ul class="navigation">
   <li>Home</li>
   <li><img src="../assets/icons/16x16/arrow right.svg" alt="" /></li>
-  <li class="active">All Beers</li>
+  <li [class.active]="!beerService.selectedBeer" class="active" routerLink="allbeers" (click)="clearSelectedBeer()">All Beers</li>
+  <li *ngIf="beerService.selectedBeer"><img src="../assets/icons/16x16/arrow right.svg" alt="" /></li>
+  <li [class.active]="beerService.selectedBeer" *ngIf="beerService.selectedBeer">{{beerService.selectedBeer.name}}</li>
 </ul>
 
-<div class="active-content">
-  <h1>All Beers</h1>
-</div>
-<app-main-content-container></app-main-content-container>
+<router-outlet></router-outlet>

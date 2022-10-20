@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Beer } from 'src/app/interfaces/beer';
 import { BeerService } from 'src/app/services/beer.service';
 import { HttpService } from 'src/app/services/http.service';
 
@@ -10,6 +11,9 @@ import { HttpService } from 'src/app/services/http.service';
 })
 export class SideFilterMenuComponent implements OnInit {
   methodForm: FormGroup;
+  abvForm: FormGroup;
+  beerStyle: FormGroup;
+  specialForm: FormGroup;
 
   constructor(
     fb: FormBuilder,
@@ -21,26 +25,64 @@ export class SideFilterMenuComponent implements OnInit {
       fermentation: false,
       twist: false,
     });
-    console.log(this.methodForm.value);
+
+    this.abvForm = fb.group({
+      from: [],
+      to: [],
+    });
+
+    this.beerStyle = fb.group({
+      ipa: false,
+      stout: false,
+      lager: false,
+      sour: false,
+      pale: false,
+    });
+
+    this.specialForm = fb.group({
+      special: false,
+    });
+  }
+
+  get abvFormFrom(): FormControl {
+    return this.abvForm.get('from') as FormControl;
+  }
+
+  get abvFormTo(): FormControl {
+    return this.abvForm.get('to') as FormControl;
   }
 
   ngOnInit(): void {}
 
-  onSubmit() {
-    this.beerService.Beers = this.beerService.Beers.filter((beer) => {
+  onSubmit() {}
+  onSubmitAbv() {
+    if (this.abvFormFrom.value && this.abvFormTo.value) {
+      this.beerService.Beers = this.beerService.Beers.filter(
+        (beer: Beer) =>
+          beer.abv >= this.abvFormFrom.value && beer.abv <= this.abvFormTo.value
+      );
+    } else if (this.abvFormFrom.value) {
+      this.beerService.Beers = this.beerService.Beers.filter(
+        (beer: Beer) => beer.abv >= this.abvFormFrom.value
+      );
+    } else if (this.abvFormTo.value) {
+      this.beerService.Beers = this.beerService.Beers.filter(
+        (beer: Beer) => beer.abv <= this.abvFormTo.value
+      );
+    } else {
+      this.httpService.getBeers().subscribe((data) => {
+        this.beerService.Beers = data;
+      });
+    }
+  }
 
-      if (this.methodForm.value.mash_temp === true) {
-        return beer.method.mash_temp;
-      }
-      else if (this.methodForm.value.fermentation === true) {
-        return beer.method.fermentation;
-      }
-      else if (this.methodForm.value.twist === true) {
-        return beer.method.twist;
-      }
-      else if (this.methodForm.value.mash_temp === false && this.methodForm.value.fermentation === false && this.methodForm.value.twist === false) {
-        return this.httpService.getBeers();
-      } else return 'Error no beers';
+  resetForms() {
+    this.beerStyle.reset();
+    this.methodForm.reset();
+    this.abvForm.reset();
+    this.specialForm.reset();
+    this.httpService.getBeers().subscribe((data) => {
+      this.beerService.Beers = data;
     });
   }
 }
