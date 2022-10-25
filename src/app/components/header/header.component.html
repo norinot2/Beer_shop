@@ -2,17 +2,17 @@
   <!--  -->
   <div class="header_first_row">
     <ul class="header_first_row_contact">
-      <img src="../../../assets/icons/16x16/communications.svg" alt="" />
+      <img src="./assets/icons/16x16/communications.svg" alt="" />
       <li>Contact</li>
     </ul>
     <ul class="header_second_row_language">
-      <img src="../../../assets/icons/16x16/maps.svg" alt="" />
+      <img src="./assets/icons/16x16/maps.svg" alt="" />
       <li>EN</li>
-      <img src="../../../assets/icons/16x16/arrow down.svg" alt="" />
+      <img src="./assets/icons/16x16/arrow down.svg" alt="" />
     </ul>
   </div>
   <div class="header__logo">
-    <img src="../../../assets/navbar/beer-shop-logo.svg" alt="Logo" />
+    <img src="./assets/navbar/beer-shop-logo.svg" alt="Logo" />
   </div>
   <div class="header_second_row">
     <app-searchbar></app-searchbar>
@@ -20,28 +20,28 @@
       <li>
         <img
           class="menu-img"
-          src="../../../assets/icons/24x24/user.svg"
+          src="./assets/icons/24x24/user.svg"
           alt=""
         />My Account
       </li>
       <li>
         <img
           class="menu-img"
-          src="../../../assets/icons/24x24/heart.svg"
+          src="./assets/icons/24x24/heart.svg"
           alt=""
         />Wishlist ({{beerService.wishListedBeers.length}})
       </li>
       <li>
         <img
           class="menu-img"
-          src="../../../assets/icons/24x24/compare.svg"
+          src="./assets/icons/24x24/compare.svg"
           alt=""
         />Compare (0)
       </li>
       <li>
         <img
           class="menu-img"
-          src="../../../assets/icons/24x24/cart.svg"
+          src="./assets/icons/24x24/cart.svg"
           alt=""
           routerLink="cart"
           (click)="beerService.navigatedToCart = true"

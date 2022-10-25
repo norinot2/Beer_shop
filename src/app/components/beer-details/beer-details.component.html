@@ -2,9 +2,9 @@
   <div class="beer-short-w-image">
     <div class="image-container">
       <div class="icon-group">
-        <img src="../../../assets/icons/24x24/compare.svg" alt="" />
+        <img src="./assets/icons/24x24/compare.svg" alt="" />
         <img
-          src="../../../assets/icons/24x24/heart.svg"
+          src="./assets/icons/24x24/heart.svg"
           alt=""
           (click)="beerService.putToWishList(beerService.selectedBeer)"
         />
@@ -17,7 +17,7 @@
     <div class="short-container">
       <h1>
         {{ beerService.selectedBeer.name }}
-        <img src="../../../assets/icons/24x24/share.svg" alt="" />
+        <img src="./assets/icons/24x24/share.svg" alt="" />
       </h1>
       <span class="beer-tagline">{{ beerService.selectedBeer.tagline }}</span>
       <span class="beer-description">{{
@@ -43,17 +43,17 @@
       <form class="add-to-cart-form" [formGroup]="addToCartForm">
         <div>
           <button class="remove-button" (click)="onRemoveFromForm()">
-            <img src="../../../assets/icons/24x24/minus.svg" alt="" /></button
+            <img src="./assets/icons/24x24/minus.svg" alt="" /></button
           ><input
             class="formInput"
             formControlName="quantity"
             type="text"
           /><button (click)="onAddToForm()" class="add-button">
-            <img src="../../../assets/icons/24x24/plus.svg" alt="" />
+            <img src="./assets/icons/24x24/plus.svg" alt="" />
           </button>
         </div>
         <button class="add-to-cart-button" (click)="onSubmit()">
-          <img src="../../../assets/icons/24x24/cart.svg" />Add to cart
+          <img src="./assets/icons/24x24/cart.svg" />Add to cart
         </button>
       </form>
     </div>
