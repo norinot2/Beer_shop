@@ -12,6 +12,11 @@
   top: 0px;
 
   margin-bottom: 500px;
+
+  overflow: scroll;
+}
+.beer-container::-webkit-scrollbar{
+  display: none;
 }
 .beer-flex {
 
@@ -29,4 +34,11 @@
   flex: none;
   order: 0;
   flex-grow: 0;
+}
+:host {
+  display: block;
+  max-height: 700px;
+  width: 100%;
+  overflow-y: scroll;
+  scroll-behavior: auto;
 }

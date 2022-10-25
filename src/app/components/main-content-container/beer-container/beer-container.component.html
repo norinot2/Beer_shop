@@ -1,4 +1,4 @@
-<div class="beer-container">
+<div class="beer-container" (scroll)="onScroll($event)">
   <div class="beer-flex">
     <ng-container *ngFor="let beer of beerService.Beers">
       <app-beer-card [beer]="beer" [beerPrice]="beer.ibu" [image_url]="beer.image_url" [name]="beer.name" [tagline]="beer.tagline" [contributor]="beer.contributed_by" ></app-beer-card>

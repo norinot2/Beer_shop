@@ -42,6 +42,7 @@ export class SideFilterMenuComponent implements OnInit {
     this.specialForm = fb.group({
       special: false,
     });
+
   }
 
   get abvFormFrom(): FormControl {
@@ -54,34 +55,45 @@ export class SideFilterMenuComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onSubmit() {}
+  onSubmitMethod() {
+    this.httpService.GetBeersByFilter(this.methodForm.value).subscribe((data) => {
+      this.beerService.Beers = data;
+    });
+  }
+
+
   onSubmitAbv() {
-    if (this.abvFormFrom.value && this.abvFormTo.value) {
-      this.beerService.Beers = this.beerService.Beers.filter(
-        (beer: Beer) =>
-          beer.abv >= this.abvFormFrom.value && beer.abv <= this.abvFormTo.value
-      );
-    } else if (this.abvFormFrom.value) {
-      this.beerService.Beers = this.beerService.Beers.filter(
-        (beer: Beer) => beer.abv >= this.abvFormFrom.value
-      );
-    } else if (this.abvFormTo.value) {
-      this.beerService.Beers = this.beerService.Beers.filter(
-        (beer: Beer) => beer.abv <= this.abvFormTo.value
-      );
-    } else {
-      this.httpService.getBeers().subscribe((data) => {
+
+    //if the below input is filled in and the above input is empty then run the below function
+    if(this.abvFormTo.value !== null && this.abvFormFrom.value === null) {
+      this.httpService.GetAbvBelow(this.abvFormTo.value).subscribe((data) => {
         this.beerService.Beers = data;
       });
     }
+    //if the above input is filled in and the below input is empty then run the below function
+    if(this.abvFormFrom.value !== null && this.abvFormTo.value === null) {
+      this.httpService.GetAbvAbove(this.abvFormFrom.value).subscribe((data) => {
+        this.beerService.Beers = data;
+      });
+    }
+
+    //if both inputs are filled in then run the below function
+    if(this.abvFormFrom.value !== null && this.abvFormTo.value !== null) {
+      this.httpService.GetAbvAboveAndBelow(this.abvFormFrom.value, this.abvFormTo.value).subscribe((data) => {
+        this.beerService.Beers = data;
+      });
+    }
+
   }
 
   resetForms() {
+    window.scrollTo(0, 0);
     this.beerStyle.reset();
     this.methodForm.reset();
     this.abvForm.reset();
     this.specialForm.reset();
-    this.httpService.getBeers().subscribe((data) => {
+    this.httpService.page = 1;
+    this.httpService.getBeers(1).subscribe((data) => {
       this.beerService.Beers = data;
     });
   }

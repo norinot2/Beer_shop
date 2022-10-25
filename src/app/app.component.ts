@@ -7,6 +7,9 @@ import { BeerService } from './services/beer.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+
+  inCart: boolean = false;
+
   constructor(public beerService: BeerService) {}
   clearSelectedBeer(){
     this.beerService.selectedBeer = undefined;

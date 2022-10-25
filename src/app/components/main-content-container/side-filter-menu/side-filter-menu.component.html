@@ -41,24 +41,24 @@
       <li>
         <input
           type="checkbox"
-          (change)="onSubmit()"
+          (change)="onSubmitMethod()"
           formControlName="mash_temp"
         />
-        <label for=""> MASH TEMP</label>
+        <label for="">Ahtanum</label>
       </li>
       <li>
         <input
           type="checkbox"
-          (change)="onSubmit()"
+          (change)="onSubmitMethod()"
           formControlName="fermentation"
-        /><label for="">FERMENTATION</label>
+        /><label for="">Extra Pale</label>
       </li>
       <li>
         <input
           type="checkbox"
-          (change)="onSubmit()"
+          (change)="onSubmitMethod()"
           formControlName="twist"
-        /><label for="">TWIST</label>
+        /><label for="">Wyeast 1056 - American Ale™</label>
       </li>
     </ul>
   </form>
@@ -69,7 +69,11 @@
   /></span>
   <form [formGroup]="specialForm">
     <ul>
-      <li><input formControlName="special" type="checkbox" /><label for=""> OFFERS</label></li>
+      <li>
+        <input formControlName="special" type="checkbox" /><label for="">
+          OFFERS</label
+        >
+      </li>
     </ul>
   </form>
   <span

@@ -16,6 +16,8 @@ import { ProductOfTheWeekComponent } from './components/badges/product-of-the-we
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BeerDetailsComponent } from './components/beer-details/beer-details.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { CartComponent } from './components/main-content-container/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { BeerDetailsComponent } from './components/beer-details/beer-details.com
     SoldOutComponent,
     NewComponent,
     ProductOfTheWeekComponent,
-    BeerDetailsComponent
+    BeerDetailsComponent,
+    CarouselComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

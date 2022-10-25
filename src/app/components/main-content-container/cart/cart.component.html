@@ -1,0 +1,30 @@
+<div class="cart-container">
+  <div class="shopping-cart">
+    <h1>Shopping Cart</h1>
+    <table>
+      <thead>
+      <th>Product</th>
+      <th>Contributor</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Subtotal</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of beerService.cartCount(); let i = index">
+        <td><img class="small-image" src="{{item.image_url}}" alt=""></td>
+        <td>{{item.contributed_by}}</td>
+        <td>{{item.ibu}}</td>
+        <td>{{beerService.beerCount[i]}}</td>
+        <td>{{beerService.subTotal[i]}}</td>
+      </tr>
+    </tbody>
+    </table>
+  </div>
+  <div class="cart-summary">
+
+  </div>
+
+  <div class="recently-viewed">
+
+  </div>
+</div>

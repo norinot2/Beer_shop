@@ -1,0 +1,69 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 32px;
+
+  width: 953.5px;
+  height: 633px;
+  left: 242.5px;
+  top: 1365px;
+  margin: auto;
+}
+.carousel-container {
+  display: flex;
+  flex-direction: row;
+
+  width: 953.5px;
+  height: 497px;
+  gap: 26px;
+  overflow-y: scroll;
+
+  //transition
+  scroll-behavior: smooth;
+}
+.carousel-container::-webkit-scrollbar {
+  display: none;
+}
+.button-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  gap: 11px;
+
+  width: 181.33px;
+  height: 40px;
+}
+.button_scroll {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  gap: 4px;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 4px;
+  border: none;
+
+  background-color: transparent;
+}
+.inactive_button {
+  width: 9.33px;
+  height: 14px;
+
+  background: #ffffff;
+
+  border: 1px solid #1c1c1c;
+
+  border-radius: 50%;
+}
+.active_button {
+  background-color: #5ab0bb;
+  border: none;
+  height: 12px;
+}

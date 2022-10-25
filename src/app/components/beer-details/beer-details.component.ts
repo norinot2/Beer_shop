@@ -48,6 +48,7 @@ export class BeerDetailsComponent implements OnInit {
       this.yeastArray.push(yeast);
     }
   }
+
   onRemoveFromForm() {
     let value = this.addToCartForm.value.quantity;
     if (value > 0) {
@@ -56,7 +57,6 @@ export class BeerDetailsComponent implements OnInit {
     }
   }
   onAddToForm() {
-    //increment the value of the form by 1 on each click
     let value = this.addToCartForm.value.quantity;
     this.addToCartForm.get('quantity')?.setValue(value + 1);
   }

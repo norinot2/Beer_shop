@@ -1,6 +1,6 @@
 <app-header></app-header>
 
-<ul class="navigation">
+<ul class="navigation" *ngIf="!beerService.navigatedToCart">
   <li>Home</li>
   <li><img src="../assets/icons/16x16/arrow right.svg" alt="" /></li>
   <li [class.active]="!beerService.selectedBeer" class="active" routerLink="allbeers" (click)="clearSelectedBeer()">All Beers</li>

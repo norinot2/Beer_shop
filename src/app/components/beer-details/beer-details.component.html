@@ -3,9 +3,16 @@
     <div class="image-container">
       <div class="icon-group">
         <img src="../../../assets/icons/24x24/compare.svg" alt="" />
-        <img src="../../../assets/icons/24x24/heart.svg" alt="" />
+        <img
+          src="../../../assets/icons/24x24/heart.svg"
+          alt=""
+          (click)="beerService.putToWishList(beerService.selectedBeer)"
+        />
       </div>
-      <img src="{{ beerService.selectedBeer.image_url }}" class="big-beer-image" />
+      <img
+        src="{{ beerService.selectedBeer.image_url }}"
+        class="big-beer-image"
+      />
     </div>
     <div class="short-container">
       <h1>
@@ -15,11 +22,13 @@
       <span class="beer-tagline">{{ beerService.selectedBeer.tagline }}</span>
       <span class="beer-description">{{
         beerService.selectedBeer.description
-        }}</span>
+      }}</span>
 
       <div class="price-shipping-container">
         <h2>€{{ beerService.selectedBeer.ibu | number: "1.1-2" }}</h2>
-        <span class="shipping-plus">Plus <a class="shipping">shipping costs</a></span>
+        <span class="shipping-plus"
+          >Plus <a class="shipping">shipping costs</a></span
+        >
       </div>
     </div>
     <div class="cart-button-w-form">
@@ -27,15 +36,20 @@
         <p>Delivery time appr. 3-7 workdays</p>
         <h4>TOTAL</h4>
         <h2>€{{ beerService.selectedBeer.ibu | number: "1.1-2" }}</h2>
-        <span class="shipping-plus">Plus <a class="shipping">shipping costs</a></span>
+        <span class="shipping-plus"
+          >Plus <a class="shipping">shipping costs</a></span
+        >
       </div>
-      <form class="add-to-cart-form" [formGroup]="addToCartForm" >
+      <form class="add-to-cart-form" [formGroup]="addToCartForm">
         <div>
-          <button class="remove-button" (click)="onRemoveFromForm()"> <img src="../../../assets/icons/24x24/minus.svg"
-              alt="">
-          </button><input class="formInput" formControlName="quantity" type="text" /><button (click)="onAddToForm()"
-            class="add-button">
-            <img src="../../../assets/icons/24x24/plus.svg" alt="">
+          <button class="remove-button" (click)="onRemoveFromForm()">
+            <img src="../../../assets/icons/24x24/minus.svg" alt="" /></button
+          ><input
+            class="formInput"
+            formControlName="quantity"
+            type="text"
+          /><button (click)="onAddToForm()" class="add-button">
+            <img src="../../../assets/icons/24x24/plus.svg" alt="" />
           </button>
         </div>
         <button class="add-to-cart-button" (click)="onSubmit()">
@@ -47,10 +61,16 @@
   <div class="beer-detailed-description">
     <h2>Beer Facts</h2>
     <ul class="detailed-list">
-      <li><span>Ingredients:</span> {{ maltArray + " " + hopsArray + " " + yeastArray }}</li>
+      <li>
+        <span>Ingredients:</span>
+        {{ maltArray + " " + hopsArray + " " + yeastArray }}
+      </li>
       <li><span>Tagline:</span> {{ beerService.selectedBeer.tagline }}</li>
-      <li><span>ABV(% ALCOHOL):</span>{{ beerService.selectedBeer.abv}}%</li>
-      <li><span>First Brewed:</span>{{ beerService.selectedBeer.first_brewed }}</li>
+      <li><span>ABV(% ALCOHOL):</span>{{ beerService.selectedBeer.abv }}%</li>
+      <li>
+        <span>First Brewed:</span>{{ beerService.selectedBeer.first_brewed }}
+      </li>
     </ul>
   </div>
+  <app-carousel></app-carousel>
 </div>

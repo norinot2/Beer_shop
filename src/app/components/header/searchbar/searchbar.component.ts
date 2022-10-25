@@ -31,7 +31,7 @@ export class SearchbarComponent implements OnInit {
     if(this.searchbarForm.value.search === '') {
       console.log(this.beerService.Beers);
 
-      this.httpService.getBeers().subscribe((data) => {
+      this.httpService.getBeers(1).subscribe((data) => {
         this.beerService.Beers = data;
       });
     }

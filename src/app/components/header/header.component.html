@@ -29,7 +29,7 @@
           class="menu-img"
           src="../../../assets/icons/24x24/heart.svg"
           alt=""
-        />Wishlist (0)
+        />Wishlist ({{beerService.wishListedBeers.length}})
       </li>
       <li>
         <img
@@ -43,6 +43,8 @@
           class="menu-img"
           src="../../../assets/icons/24x24/cart.svg"
           alt=""
+          routerLink="cart"
+          (click)="beerService.navigatedToCart = true"
         />Cart ({{ beerService.inCart.length }})
       </li>
     </ul>

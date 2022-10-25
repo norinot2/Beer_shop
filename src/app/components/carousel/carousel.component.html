@@ -1,0 +1,13 @@
+<div class="container">
+  <h2>Customers also bought</h2>
+  <div id="carousel" class="carousel-container">
+    <ng-container *ngFor="let beer of beerService.carouselBeers">
+      <app-beer-card [beer]="beer" [beerPrice]="beer.ibu" [image_url]="beer.image_url" [name]="beer.name" [tagline]="beer.tagline" [contributor]="beer.contributed_by"></app-beer-card>
+    </ng-container>
+  </div>
+  <div class="button-group">
+    <button class="button_scroll" (click)="scrollLeft()"><img src="../../../assets/icons/24x24/arrow left.svg" alt=""></button>
+    <button *ngFor="let item of numberOfPages" class="inactive_button" id="indicator_{{item}}"></button>
+    <button class="button_scroll" (click)="scrollRight()"><img src="../../../assets/icons/24x24/arow right.svg" alt=""></button>
+  </div>
+</div>

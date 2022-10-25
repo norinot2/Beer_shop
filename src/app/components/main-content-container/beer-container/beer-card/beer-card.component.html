@@ -1,5 +1,5 @@
 <div class="card">
-  <div (click)="selectedBeer(beer!)" class="top-contents">
+  <div class="top-contents">
     <div class="header">
       <div class="badge-container">
         <app-new></app-new>
@@ -7,16 +7,21 @@
       </div>
       <div class="icon-container-topside">
         <img src="../../../../../assets/icons/24x24/compare.svg" alt="" />
-        <img src="../../../../../assets/icons/24x24/heart.svg" alt="" />
+        <img
+          src="../../../../../assets/icons/24x24/heart.svg"
+          alt=""
+          (click)="beerService.putToWishList(beer!)"
+        />
       </div>
     </div>
     <div
       class="image-container"
       style="background: url({{image_url}})"
+      (click)="selectedBeer(beer!)"
     ></div>
     <div class="description">
       <small>{{ contributor }}</small>
-      <h5>{{ name }}</h5>
+      <h5 (click)="selectedBeer(beer!)">{{ name }}</h5>
       <small>{{ tagline }}</small>
     </div>
   </div>
