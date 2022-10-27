@@ -10,6 +10,7 @@ export class AppComponent {
 
   inCart: boolean = false;
 
+
   constructor(public beerService: BeerService) {}
   clearSelectedBeer(){
     this.beerService.selectedBeer = undefined;
