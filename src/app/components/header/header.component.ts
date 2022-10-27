@@ -14,6 +14,8 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  
   clearSelectedBeer(){
     this.beerService.navigatedToCart = false;
     this.beerService.selectedBeer = undefined;
